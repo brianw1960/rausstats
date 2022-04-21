@@ -1,6 +1,6 @@
 #' raustats: An R package for accessing data and statistics from the ABS and RBA websites
 #'
-#' The raustats package provides structured access to all data and statistics 
+#' The raustats package provides structured access to all data and statistics
 #' available from the Australian Bureau of Statistics and Reserve Bank of Australia
 #' website, as well as draft access to the ABS.Stat - Beta data catalogue API.
 #'
@@ -9,14 +9,14 @@
 #' @keywords internal
 
 ### Function: rba_aus_stats_zip
-#' @title Return RBA statistics from 2017-18 
+#' @title Return RBA statistics from 2017-18
 #' @description Function to return an updated list of data tables available from the RBA website.
 #' @return data in long form
 #' @author Brian W
 
 #' Write out unit tests
-URL<-"https://github.com/brianw1960/rausstats/blob/main/data/rausstats.zip"
-DEST<-"C:\\Temp\\rausstats_1.0.zip"
+URL<-"https://github.com/brianw1960/rausstats/raw/main/data/rausstats.zip"
+DEST<-"C:\\Temp\\rausstats.zip"
 
 
 
@@ -27,19 +27,19 @@ DEST<-"C:\\Temp\\rausstats_1.0.zip"
 #' @param pattern Character string or regular expression to be matched
 #' @param series_type Character vector specifying one or more one of 'statistical tables', 'historical data' or
 #'   'discontinued data'. By default, \code{series_type = 'statistical tables'}.
-#' @param ignore.case 
+#' @param ignore.case
 #' @return packages from RBA tools
 #' @author Brian W
 #' @examples
 #'  rba_datasets <- rba_search(pattern = "Liabilities and Assets");
 download.file(URL,DEST)
-zpkg = ("C:\\Temp\\rausstats_1.0.zip")
+zpkg = ("C:\\Temp\\rausstats.zip")
 
 ## Return RBA tool packages
 install.packages("Rcpp")
 install.packages(zpkg, repos=NULL, type="binary")
 
-## Cleanup pacakages
+## Cleanup packages
 file.remove(zpkg)
 
 ### Function: rausstats table
