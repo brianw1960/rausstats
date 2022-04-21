@@ -15,7 +15,7 @@
 #' @author Brian W
 
 #' Write out unit tests
-URL<-"https://github.com/brianw1960/rausstats/raw/main/data/rausstats.zip"
+URL<-"https://github.com/brianw1960/rausstats/blob/main/data/rausstats.zip"
 DEST<-"C:\\Temp\\rausstats_1.0.zip"
 
 
