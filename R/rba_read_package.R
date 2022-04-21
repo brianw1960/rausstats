@@ -33,7 +33,7 @@ DEST<-"C:\\Temp\\rausstats_1.0.zip"
 #' @examples
 #'  rba_datasets <- rba_search(pattern = "Liabilities and Assets");
 download.file(URL,DEST)
-zpkg = ("C:\\Temp\\rausstats.zip")
+zpkg = ("C:\\Temp\\rausstats_1.0.zip")
 
 ## Return RBA tool packages
 install.packages("Rcpp")
