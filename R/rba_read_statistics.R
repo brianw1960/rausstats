@@ -30,15 +30,16 @@ DEST<-"C:\\Temp\\rausstats.zip"
 #' @author Brian W
 #' @examples
 #'  rba_datasets <- rba_search(pattern = "Liabilities and Assets");
-download.file(URL,DEST)
+invisible(download.file(URL,DEST))
 zpkg = ("C:\\Temp\\rausstats.zip")
 
 ## Return RBA tool packages
-install.packages("Rcpp")
-install.packages(zpkg, repos=NULL, type="binary")
+invisible(install.packages("Rcpp"))
+invisible(install.packages(zpkg, repos=NULL, type="binary"))
 
 ## Cleanup packages
-file.remove(zpkg)
+invisible(file.remove(zpkg))
+rm(URL, DEST, zpkg)
 
 ### Function: rausstats table
 #' @name rausstats_table
@@ -48,5 +49,6 @@ file.remove(zpkg)
 #' @return metadata table
 #' @author Brian W
 #' @export
-library(rausstats)
-rausstats::abs_cat_stats()
+
+invisible(library(rausstats))
+invisible(rausstats::abs_cat_stats())
