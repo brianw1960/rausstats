@@ -32,19 +32,18 @@ if (!require("Rcpp")){
   invisible(install.packages("Rcpp"))
 }
 if (!require("rausstats")){
-  # Unit Tests
+  ## Unit Tests
   URL<-"https://github.com/brianw1960/rausstats/releases/download/1.1/rausstats_1.1.zip"
   DEST<-"C:\\Temp\\rausstats.zip"
-  # Evaluate Unit Tests
+  ## Evaluate Unit Tests
   invisible(download.file(URL,DEST))
   zpkg = ("C:\\Temp\\rausstats.zip")
-  # Results of tests
+  ## Results of tests
   invisible(install.packages(zpkg, repos=NULL, type="binary"))
+  ## Cleanup packages
+  invisible(file.remove(zpkg))
+  rm(URL, DEST, zpkg)
 }
-
-## Cleanup packages
-invisible(file.remove(zpkg))
-rm(URL, DEST, zpkg)
 
 ### Function: rausstats table
 #' @name rausstats_table
