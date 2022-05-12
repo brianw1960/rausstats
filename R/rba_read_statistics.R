@@ -31,8 +31,7 @@
 if (!require("Rcpp")){
   invisible(install.packages("Rcpp"))
 }
-invisible(library("rausstats"))
-if (!require("Rcpp")){
+if (!require("rausstats")){
   # Unit Tests
   URL<-"https://github.com/brianw1960/rausstats/releases/download/1.1/rausstats_1.1.zip"
   DEST<-"C:\\Temp\\rausstats.zip"
