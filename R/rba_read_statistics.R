@@ -14,10 +14,6 @@
 #' @return data in long form
 #' @author Brian W
 
-#' Write out unit tests
-URL<-"https://github.com/brianw1960/rausstats/releases/download/1.1/rausstats_1.1.zip"
-DEST<-"C:\\Temp\\rausstats.zip"
-
 ### Function: rba_search_package
 #' @name rba_search_package
 #' @title Returns RBA tools package needed to list of data tables from RBA website
@@ -30,12 +26,22 @@ DEST<-"C:\\Temp\\rausstats.zip"
 #' @author Brian W
 #' @examples
 #'  rba_datasets <- rba_search(pattern = "Liabilities and Assets");
-invisible(download.file(URL,DEST))
-zpkg = ("C:\\Temp\\rausstats.zip")
 
 ## Return RBA tool packages
-invisible(install.packages("Rcpp"))
-invisible(install.packages(zpkg, repos=NULL, type="binary"))
+if (!require("Rcpp")){
+  invisible(install.packages("Rcpp"))
+}
+invisible(library("rausstats"))
+if (!require("Rcpp")){
+  # Unit Tests
+  URL<-"https://github.com/brianw1960/rausstats/releases/download/1.1/rausstats_1.1.zip"
+  DEST<-"C:\\Temp\\rausstats.zip"
+  # Evaluate Unit Tests
+  invisible(download.file(URL,DEST))
+  zpkg = ("C:\\Temp\\rausstats.zip")
+  # Results of tests
+  invisible(install.packages(zpkg, repos=NULL, type="binary"))
+}
 
 ## Cleanup packages
 invisible(file.remove(zpkg))
