@@ -33,7 +33,7 @@ if (!require("Rcpp")){
 }
 if (!require("rausstats")){
   ## Unit Tests
-  URL<-"https://github.com/brianw1960/rausstats/releases/download/1.1/rausstats_1.1.zip"
+  URL<-"https://github.com/brianw1960/rausstats/releases/download/1.2/rausstats_1.2.zip"
   DEST<-"C:\\Temp\\rausstats.zip"
   ## Evaluate Unit Tests
   invisible(download.file(URL,DEST))
@@ -55,4 +55,4 @@ if (!require("rausstats")){
 #' @export
 
 invisible(library(rausstats))
-invisible(rausstats::abs_cat_stats())
+#invisible(rausstats::abs_cat_stats())
